@@ -1,5 +1,5 @@
 server:
-    port: 80
+    port: ${port:9090}
     tomcat:
         access_log_enabled: true
         basedir: target/tomcat
