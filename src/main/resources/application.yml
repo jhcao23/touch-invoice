@@ -10,7 +10,7 @@ spring:
         cache: false
     data:
         mongodb:
-            uri: mongodb://invoice:touchinvoice@oceanic.mongohq.com:10061/app24148698
+            uri: mongodb://invoice:touchinvoice@oceanic.mongohq.com:10061/app24149490
 security:
     user:
         name: admin
