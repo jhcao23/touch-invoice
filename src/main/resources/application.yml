@@ -1,0 +1,17 @@
+server:
+    port: 80
+    tomcat:
+        access_log_enabled: true
+        basedir: target/tomcat
+spring:
+    application:
+        name: touch-mars-invoice
+    thymeleaf:
+        cache: false
+    data:
+        mongodb:
+            uri: mongodb://invoice:touchinvoice@oceanic.mongohq.com:10061/app24148698
+security:
+    user:
+        name: admin
+        password: admin

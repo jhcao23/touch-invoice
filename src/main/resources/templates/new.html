@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      lang="en">
+    <head>
+    	<meta charset="utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	    
+    	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+    
+    	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <title>Create a new Invoice</title>
+    </head>
+    <body>
+	    <div class="container-fluid">
+	        <form class="form-horizontal" role="form" th:action="@{/create}" method="post">
+	        	<div class="panel panel-default">
+	    			<div class="panel-heading">
+						<h3 class="panel-title">Customer Info</h3>
+					</div>
+	    			<div class="panel-body">
+		    			<div class="form-group">
+		    				<label for="customer.firstName" class="col-sm-2 control-label">First Name</label>
+			    			<div class="col-sm-10">
+			    				<input id="customer.firstName" type="text" name="customer.firstName" placeholder="First Name" class="form-control"/>
+			    			</div>
+			    		</div>
+			    		<div class="form-group">
+		    				<label for="customer.lastName" class="col-sm-2 control-label">First Name</label>
+			    			<div class="col-sm-10">
+			    				<input id="customer.lastName" type="text" name="customer.lastName" placeholder="Last Name" class="form-control"/>
+			    			</div>
+			    		</div>
+			    		<div class="form-group">
+		    				<label for="customer.email" class="col-sm-2 control-label">Email</label>
+			    			<div class="col-sm-10">
+			    				<input id="customer.email" type="email" name="customer.email" placeholder="Email" class="form-control"/>
+			    			</div>
+			    		</div>
+			    		<div class="form-group">
+		    				<label for="customer.phone" class="col-sm-2 control-label">Phone</label>
+			    			<div class="col-sm-10">
+			    				<input id="customer.email" type="tel" name="customer.phone" placeholder="Phone" class="form-control"/>
+			    			</div>
+			    		</div>
+			    	</div>
+	    		</div>
+	    		<div class="panel panel-default">
+	    			<div class="panel-heading">
+						<h3 class="panel-title">Service Summary</h3>
+					</div>
+	    			<div class="panel-body">
+	    				<div class="form-group">
+		    				<label for="invoiceAmount" class="col-sm-2 control-label">Invoiced Amount($)</label>
+			    			<div class="col-sm-10">
+			    				<input id="invoiceAmount" type="text" name="invoiceAmount" placeholder="Invoiced $$$" class="form-control"/>
+			    			</div>
+			    		</div>
+			    		<div class="form-group">
+		    				<label for="receivedAmount" class="col-sm-2 control-label">Received Amount($)</label>
+			    			<div class="col-sm-10">
+			    				<input id="receivedAmount" type="text" name="receivedAmount" placeholder="Received $$$" class="form-control"/>
+			    			</div>
+			    		</div>
+			    		<div class="form-group">
+		    				<label for="paymentMethod" class="col-sm-2 control-label">Payment Method</label>
+			    			<div class="col-sm-10">
+			    				<input id="paymentMethod" type="text" name="paymentMethod" placeholder="Payment Method" class="form-control"/>
+			    			</div>
+			    		</div>
+		            </div>
+	    		</div>
+	            <div class="panel panel-default">
+	    			<div class="panel-heading">
+						<h3 class="panel-title">Service Detail</h3>
+					</div>
+	    			<div class="panel-body"> 
+	    				<table class="table table-responsive table-hover">
+							<tr class="info">
+								<td></td>
+								<td class="active">
+									<input type="text" name="items[0].itemContent" class="form-control" id="items0.itemContent" placeholder="Item 1" />
+								</td>
+								<td class="success">
+									<input type="text" name="items[0].charge" class="form-control" id="items0.charge" placeholder="Item 1 Fee" />
+								</td>
+								<td></td>
+							</tr>
+						</table>
+		            </div>
+	    		</div>   		
+				<button type="submit" class="btn btn-primary">Create Invoice</button>
+	        </form>
+	    </div>
+    </body>
+</html>
